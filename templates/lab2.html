@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+        <!-- <link href="{{ url_for('static', path='/simple.css') }}" rel="stylesheet"> -->
+        <style>
+            html {
+                padding-left: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 4px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Дані:</p>
+        <div id="table">{{data}}</div>
+
+        <p>Інтервальний статистичний ряд:</p>
+        <div id="table2">{{interval_data}}</div>
+
+        <p>Кількість елементів: {{count}}</p>
+        <h1>Числові параметри:</h1>
+        <p>Середнє статистичне: {{average}}</p>
+        <p>Мода: {{mode}}</p>
+        <p>Точна мода: {{exact_mode}}</p>
+        <p>Медіана: {{median}}</p>
+        <p>Точна медіана: {{exact_median}}</p>
+        <p>Розмах: {{range}}</p>
+        <p>Дисперсія: {{dispersion}}</p>
+        <p>Середнє квадратичне відхилення: {{avg_quad_deviation}}</p>
+        <p>Виправлена дисперсія: {{adj_dispersion}}</p>
+        <p>Виправлене середнє квадратичне відхилення: {{adj_aqd}}</p>
+        <p>Варіація: {{variation}}</p>
+        <p>Початковий момент {{k}}-го порядку: {{starting_moment}}</p>
+        <p>Центральний момент {{k}}-го порядку: {{central_moment}}</p>
+        <p>Асиметрія: {{skewness}}</p>
+        <p>Ексцес: {{kurtosis}}</p>
+    </body>
+
+    <script>
+        // A hack to render the html from python
+        var table = document.getElementById("table");
+        table.innerHTML = table.textContent;
+
+        var table2 = document.getElementById("table2");
+        table2.innerHTML = table2.textContent;
+    </script>
+</html>
