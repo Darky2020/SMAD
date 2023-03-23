@@ -1,3 +1,5 @@
+import numpy as np
+from scipy.interpolate import make_interp_spline
 import matplotlib.pyplot as plt
 import functions
 
@@ -12,7 +14,7 @@ def graph_1():
 
     for interval in series:
         x.append((interval["max"] + interval["min"])/2)
-        y.append(interval["count"])
+        y.append(interval["count"]/step)
 
         x_ticks.append(interval["max"])
 
@@ -21,6 +23,7 @@ def graph_1():
     ax.set_yticks(y)
     ax.bar(x, y, step, edgecolor="black")
     ax.set(title="Гістограма за частотами")
+
     plt.show()
 
 def graph_2():
@@ -34,7 +37,7 @@ def graph_2():
 
     for interval in series:
         x.append((interval["max"] + interval["min"])/2)
-        y.append(interval["probability"])
+        y.append(interval["probability"]/step)
 
         x_ticks.append(interval["max"])
 
@@ -59,10 +62,15 @@ def graph_3():
         x.append(interval["avg"])
         y.append(sum)
 
+    X_Y_Spline = make_interp_spline(x, y)
+    X_ = np.linspace(min(x), max(x), 1000)
+    Y_ = X_Y_Spline(X_)
+
     _, ax = plt.subplots()
     ax.set_xticks(x)
     ax.set_yticks(y)
-    ax.plot(x, y, "o-")
+    ax.plot(X_, Y_, "-")
+    ax.scatter(x=x, y=y, c='C0', zorder=2)
     ax.set(title="Кумулятивна крива за накопиченими частотами")
     ax.grid()
     plt.show()
@@ -81,10 +89,15 @@ def graph_4():
         x.append(interval["avg"])
         y.append(sum)
 
+    X_Y_Spline = make_interp_spline(x, y)
+    X_ = np.linspace(min(x), max(x), 1000)
+    Y_ = X_Y_Spline(X_)
+
     _, ax = plt.subplots()
     ax.set_xticks(x)
     ax.set_yticks(y)
-    ax.plot(x, y, "o-")
+    ax.plot(X_, Y_, "-")
+    ax.scatter(x=x, y=y, c='C0', zorder=2)
 
     ax.set(title="Кумулятивна крива за накопиченими відносними частотами")
     ax.grid()
@@ -114,7 +127,7 @@ def graph_5():
     y += [1]
 
     for i, element in enumerate(y):
-        ax.plot([x[i], x[i+1]], [element, element], "b-", zorder=1)
+        ax.plot([x[i], x[i+1]], [element, element], "C0-", zorder=1)
 
     ax.set(title="Емпірична функція розподілу")
     ax.set_axisbelow(True)
@@ -122,7 +135,7 @@ def graph_5():
 
     # Виколоті точки
     for i, element in enumerate(y[1:-1]):
-        ax.scatter(x=x[i+1], y=element, c="white", edgecolors="blue", zorder=2)
+        ax.scatter(x=x[i+1], y=element, c="white", edgecolors="C0", zorder=2)
 
     plt.show()
 

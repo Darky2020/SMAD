@@ -53,6 +53,7 @@ async def read_item(request: Request, k: int = 2):
             "mode":          str(functions.mode()),
             "exact_mode":    str(functions.exact_mode()),
             "median":        round(functions.median(), 6),
+            "median2":       round(functions.median2(), 6),
             "exact_median":  round(functions.exact_median(), 6),
             "range":         round(functions.distribution_range(), 6),
             "dispersion":    round(functions.dispersion(), 6),

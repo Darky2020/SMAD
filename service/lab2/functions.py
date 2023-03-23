@@ -1,5 +1,5 @@
-from .data import data
-# from data import data
+# from .data import data
+from data import data
 import math
 
 def intervals():
@@ -241,6 +241,63 @@ def median():
     return min_val + (
         0.5 - distribution_function(min_val))/(
         distribution_function(max_val) - distribution_function(min_val))*(max_val - min_val)
+
+# Медіана (інша формула)
+def median2():
+    series = interval_stat_series()
+
+    size = len(data)
+    mid = []
+
+    # Межі нашого інтервалу
+    min_val = 0
+    max_val = 0
+    interval_count = 0
+    cumulated_total = 0
+
+    # Середина два числа
+    if size%2 == 0:
+        mid = [int(size/2), int(size/2)+1]
+
+    # Середина одне число
+    else:
+        mid = [int((size+1)/2)]
+
+    if len(mid) == 1:
+        total = 0
+
+        # Перебираємо інтервали поки сумарна кількість елементів < середини
+        for interval in series:
+            cumulated_total = total
+            total += interval["count"]
+
+            if total >= mid[0]:
+                min_val = interval["min"]
+                max_val = interval["max"]
+                interval_count = interval["count"]
+                break
+    else:
+        total = 0
+
+        for interval in series:
+            cumulated_total = total
+            total += interval["count"]
+
+            # Два числа середини, обидва попадають на різні інтервали
+            if total >= mid[0] and total < mid[1]:
+                min_val = interval["min"]
+                max_val = series[series.index(interval)+1]["max"]
+                interval_count = interval["count"]
+                break
+
+            # Обидва попадають на той самий інтервал
+            elif total >= mid[1]:
+                min_val = interval["min"]
+                max_val = interval["max"]
+                interval_count = interval["count"]
+                break
+
+    return min_val + (max_val - min_val)/interval_count * (size/2 - cumulated_total)
 
 # Розмах
 def distribution_range():
