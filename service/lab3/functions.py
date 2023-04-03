@@ -38,7 +38,7 @@ def interval_estimation_2(alpha):
 
 # Інтервальна оцінка середнього квадратичного відхилення
 def interval_estimation_3(alpha):
-    # Знаходимо значення X^2 з обох боків (alpha і 1-alpha) бо розподін не симетричний
+    # Знаходимо значення X^2 з обох боків (alpha і 1-alpha) бо розподіл не симетричний
     q = [
         scipy.stats.chi2(df=len(data)-1).ppf(alpha),
         scipy.stats.chi2(df=len(data)-1).ppf(1-alpha)

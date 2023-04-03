@@ -22,9 +22,9 @@ def graph_1():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
 
     plt.title("Інтервальна оцінка математичного сподівання при відомій дисперсії (α=0.05)", fontsize=10)
@@ -38,9 +38,9 @@ def graph_1():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
 
     plt.title("Інтервальна оцінка математичного сподівання при відомій дисперсії (α=0.01)", fontsize=10)
@@ -54,9 +54,9 @@ def graph_1():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
     plt.title("Інтервальна оцінка математичного сподівання при відомій дисперсії (α=0.001)", fontsize=10)
     plt.show()
@@ -70,9 +70,9 @@ def graph_2():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
 
     plt.title("Інтервальна оцінка математичного сподівання при невідомій дисперсії (α=0.05)", fontsize=10)
@@ -86,9 +86,9 @@ def graph_2():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
 
     plt.title("Інтервальна оцінка математичного сподівання при невідомій дисперсії (α=0.01)", fontsize=10)
@@ -102,9 +102,9 @@ def graph_2():
     plot_normal_dist(interval[1], standard_deviation(), "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[0], 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(interval[1], 3)}, σ = {round(standard_deviation(), 3)}",
     ])
     plt.title("Інтервальна оцінка математичного сподівання при невідомій дисперсії (α=0.001)", fontsize=10)
     plt.show()
@@ -118,9 +118,9 @@ def graph_3():
     plot_normal_dist(mean(), interval[1], "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
     ])
 
     plt.title("Інтервальна оцінка середнього квадратичного відхилення (α=0.05)", fontsize=10)
@@ -134,9 +134,9 @@ def graph_3():
     plot_normal_dist(mean(), interval[1], "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
     ])
 
     plt.title("Інтервальна оцінка середнього квадратичного відхилення (α=0.01)", fontsize=10)
@@ -150,9 +150,9 @@ def graph_3():
     plot_normal_dist(mean(), interval[1], "green", "dashed")
 
     plt.legend([
-        f"μ = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
-        f"μ = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(standard_deviation(), 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[0], 3)}",
+        f"m = {round(mean(), 3)}, σ = {round(interval[1], 3)}",
     ])
 
     plt.title("Інтервальна оцінка середнього квадратичного відхилення (α=0.001)", fontsize=10)
