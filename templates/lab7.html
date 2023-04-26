@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 7</title>
+        <!-- <link href="{{ url_for('static', path='/simple.css') }}" rel="stylesheet"> -->
+        <style>
+            html {
+                padding-left: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .data table, .data th, .data td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 4px;
+                text-align: center;
+            }
+
+            .other td {
+                min-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>X:</p>
+        <div id="x_data" class="data">{{sample_x_table}}</div>
+
+        <p>Y:</p>
+        <div id="y_data" class="data">{{sample_y_table}}</div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <h1>Метод найменших квадратів:</h1>
+                        <table class="other">
+                            <tbody>
+                                <tr>
+                                    <td>Δ = {{det_x}}</td>
+                                    <td>Δ' = {{det_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Δ<sub>α</sub> = {{d_alpha_x}}</td>
+                                    <td>Δ<sub>α'</sub> = {{d_alpha_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Δ<sub>β</sub> = {{d_beta_x}}</td>
+                                    <td>Δ<sub>β'</sub> = {{d_beta_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>α = {{alpha_x}}</td>
+                                    <td>α' = {{alpha_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>β = {{beta_x}}</td>
+                                    <td>β' = {{beta_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{function_1}}</td>
+                                    <td>{{function_2}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <h1>Використання статистичного коефіцієнта кореляції:</h1>
+                        <table class="other">
+                            <tbody>
+                                <tr>
+                                    <td>r*<sub>xy</sub> = {{r_xy}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="text-decoration:overline">x</span> = {{avg_x}}</td>
+                                    <td><span style="text-decoration:overline">y</span> = {{avg_y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>S<sub>0x</sub> = {{s_0x}}</td>
+                                    <td>S<sub>0y</sub> = {{s_0y}}</td>
+                                </tr>
+                                <tr>
+                                    <td>r*<sub>x|y</sub> = {{r_x_to_y}}</td>
+                                    <td>r*<sub>y|x</sub> = {{r_y_to_x}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{function_3}}</td>
+                                    <td>{{function_4}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: white;">a</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- <p>Середнє статистичне: {{average}}</p> -->
+        <!-- <p>Мода: {{mode}}</p> -->
+        <!-- <p>Точна мода: {{exact_mode}}</p> -->
+        <!-- <p>Медіана: {{median}} | {{median2}}</p> -->
+        <!-- <p>Точна медіана: {{exact_median}}</p> -->
+        <!-- <p>Розмах: {{range}}</p> -->
+        <!-- <p>Дисперсія: {{dispersion}}</p> -->
+        <!-- <p>Середнє квадратичне відхилення: {{avg_quad_deviation}}</p> -->
+        <!-- <p>Виправлена дисперсія: {{adj_dispersion}}</p> -->
+        <!-- <p>Виправлене середнє квадратичне відхилення: {{adj_aqd}}</p> -->
+        <!-- <p>Варіація: {{variation}}</p> -->
+        <!-- <p>Початковий момент {{k}}-го порядку: {{starting_moment}}</p> -->
+        <!-- <p>Центральний момент {{k}}-го порядку: {{central_moment}}</p> -->
+        <!-- <p>Асиметрія: {{skewness}}</p> -->
+        <!-- <p>Ексцес: {{kurtosis}}</p> -->
+    </body>
+
+    <script>
+        // A hack to render the html from python
+        var table = document.getElementById("x_data");
+        table.innerHTML = table.textContent;
+
+        var table2 = document.getElementById("y_data");
+        table2.innerHTML = table2.textContent;
+    </script>
+</html>
